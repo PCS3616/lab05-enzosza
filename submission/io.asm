@@ -1,0 +1,46 @@
+GD    /000
+MM    TEMPX
+GD    /000
+GD    /000
+MM    TEMPY
+LD    TEMPX
+SB    CONST_3030
+MM    X
+LD    TEMPY
+SB    CONST_3030
+MM    Y
+LD    X
+AD    Y
+MM    SUM
+LD    SUM
+MM    TEMP
+CLEAR_LOOP   LD    TEMP
+SB    CONST_0010
+JN    CLEAR_END
+MM    TEMP
+JP   CLEAR_LOOP
+CLEAR_END   LD    TEMP
+SB    CONST_000A
+JN    NO_CARRY
+LD    SUM
+SB    CONST_000A
+AD    CONST_0100
+MM    SUM
+NO_CARRY  LD    SUM
+AD    CONST_3030
+MM    RESULT
+LD    RESULT
+PD    /100
+HM    FIM
+X           K   /0000
+Y           K   /0000
+SUM         K   /0000
+RESULT      K   /0000
+TEMPX       K   /0000
+TEMPY       K   /0000
+TEMP        K   /0000
+CONST_3030  K   /3030
+CONST_000A  K   /000A
+CONST_0100  K   /0100
+CONST_0010  K   /0010
+FIM         K   /0000
